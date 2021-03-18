@@ -1,8 +1,3 @@
-//
-// MQ3: Alcohol Sensor
-//
-//int TIME_UNTIL_WARMUP = 900;
-//unsigned long time;
 
 void setup() {
   Serial.begin(115200);
@@ -13,13 +8,12 @@ void setup() {
   //while(time<=TIME_UNTIL_WARMUP);
   
   // warm-up MQ-3 till reading value <600
-  
+  while (analogRead(A0)>600);
 }
 
 void loop() {
   int alco;
   alco = analogRead(A0);
   Serial.println(alco);
+  delay(100);
 }
-© 2021 GitHub, Inc.
-
